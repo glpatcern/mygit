@@ -1,0 +1,110 @@
+# General purpose settings and aliases
+#######################################
+
+# Authentication
+alias lxp ssh itglp@lxplus
+alias lxa ssh itglp@lxadm
+alias cnaf ssh -X lopresti@bastion.cnaf.infn.it -L18080:dlf01.cr.cnaf.infn.it:80 -L11521:oracle10-vip.cr.cnaf.infn.it:1521
+alias ralcert ssh -A -X glp34@telnet.itd.clrc.ac.uk -L28080:ccmsdlf.ads.rl.ac.uk:80 -L21521:cdbc04.gridpp.rl.ac.uk:1521
+alias ral ssh -X castor@telnet.itd.clrc.ac.uk
+alias asgc ssh -2 root@c2stager.grid.sinica.edu.tw -L31521:w-rac02-vip.grid.sinica.edu.tw:1521
+alias seblap ssh -X itglp@seblap
+alias desk ssh -X itglp@pcitdm04
+
+# Utilities
+alias lap mount /laptop
+alias ulap sudo umount /laptop
+alias nmapscan sudo nmap -sS -v -P0 -O
+alias a2ps a2ps -A fill -C --toc -s duplex
+alias cernrd 'rdesktop -a 16 -u lopresti -d CERN -g 1280x960 cernts.cern.ch &'
+
+alias gettime 'perl -e "'"print localtime ( shift ) . chr(0xa) . chr(0xd) "'"'
+alias getip 'python ~/.getip.py' \!:1
+alias finderrno grep \!:1 /usr/include/bits/errno.h /usr/include/sys/errno.h /usr/include/errno.h /usr/include/linux/errno.h /usr/include/asm/errno.h /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h
+
+alias ls ls --color=auto
+alias l ls -A
+alias ll ls -hl
+alias nsls nsls -li
+
+alias cd.. cd ..
+alias cd... cd ../..
+alias cd.... cd ../../..
+
+alias fresh 'source ~itglp/.tcshrc'
+
+complete cvs 'p/1/(add annotate commit diff update remove status)/'
+
+# tcsh nice behavior
+#####################
+set autocorrect=
+set autoexpand=
+set autolist=
+set color=
+set colorcat=
+set complete=enhance
+set correct=cmd
+set fignore=~
+set implicitcd=verbose
+set matchbeep=never
+set nobeep=
+set noclobber=
+set notify=
+set prompt="%T %n@%m:%c03> "
+set pushdtohome=
+set rmstar=
+set savehist=200
+set visiblebell=t
+complete setenv 'p/1/e/'
+complete unsetenv 'p/1/e/'
+setenv LS_COLORS "di=1;35:or=1;4;31;mi=1;4;31"
+
+# easy update of a system variable
+###################################
+
+alias setadd setenv \!:1 \$\{\!:1\}:\!:2
+alias setpre setenv '\!:1 \!:2\:${\!:1}'
+complete setadd 'p/1/e/'
+complete setpre 'p/1/e/'
+
+# Environment related
+######################
+
+setenv EDITOR vim
+setenv PATH /bin:/usr/bin:/usr/local/bin:~itglp/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:/opt/globus/bin:.:/afs/cern.ch/asis/i386_redhat73/usr.local/bin
+setenv OS Linux
+
+# Pour creer des core dumps
+limit coredumpsize unlimited
+
+# Python Environment
+setenv PYTHONPATH /usr/local/lib/python/site-packages
+
+# Grid Environment
+setenv GLITE_LOCATION /afs/cern.ch/project/gd/LCG-share/3.0.24-1/glite
+#setenv MANPATH ${MANPATH}:${GLITE_LOCATION}/share/man
+
+# Castor specific
+setenv PATH ${PATH}:${ORACLE_HOME}/bin:${CASTOR_ROOT}/tools:${CASTOR_ROOT}/hsmtools:${GLOBUS_LOCATION}/bin
+setenv LD_LIBRARY_PATH /usr/lib:${GLOBUS_LOCATION}/lib:${GSOAP_LOCATION}/lib:/opt/glite/lib:.:${GLITE_LOCATION}/../edg/lib:${CASTOR_ROOT}/shlib:${SRM_ROOT}/srm:/usr/local/lib
+setenv CASTORDEV_HOME $CASTOR_ROOT
+
+setenv CASTOR_WWW /afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR
+setenv SAVANNAH_WWW /afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR/DIST/CERN/savannah/CASTOR.pkg
+setenv CHOME /castor/cern.ch/user/i/itglp
+
+setenv MAJOR_CASTOR_VERSION 2.1
+setenv MINOR_CASTOR_VERSION 7.99
+
+alias mmf 'cd ${CASTOR_ROOT} ; make -f Makefile.ini Makefiles ; make depend ; cd -'
+alias mmfs 'cd ${SRM_ROOT} ; make -f Makefile.ini Makefiles ; make depend ; cd -'
+
+setenv STAGER_TRACE 3
+#setenv VDQM_TRACE 3
+#setenv RFIO_TRACE 3
+setenv RFIO_USE_CASTOR_V2 YES
+
+#for tests
+alias cfile 'echo $CHOME/test/${STAGE_HOST}_`uuidgen`'
+alias trycastor 'rfcp /etc/group $CHOME/test/${STAGE_HOST}_`uuidgen`'
+alias c2env 'setenv STAGE_HOST \!:1; setenv STAGE_SVCCLASS \!:2'
