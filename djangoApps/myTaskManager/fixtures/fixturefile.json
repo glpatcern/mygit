@@ -1,0 +1,81 @@
+[
+    {	
+        "model": "myTaskManager.Person",
+        "pk": 1,
+        "fields": {
+            "name": "Giuseppe",
+            "email": "giuseppe.lo.re@cern.ch"         
+        } 
+    },
+    {	
+        "model": "myTaskManager.Person",
+        "pk": 2,
+        "fields": {
+            "name": "Daniela",
+            "email": "daniela_marletta@hotmail.com"         
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Category",
+        "pk": 1,
+        "fields": {
+            "name": "CASTOR Tape"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Category",
+        "pk": 2,
+        "fields": {
+            "name": "TSM"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Category",
+        "pk": 3,
+        "fields": {
+            "name": "Personal"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Status",
+        "pk": 1,
+        "fields": {
+            "name": "New"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Status",
+        "pk": 2,
+        "fields": {
+            "name": "In hand"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Status",
+        "pk": 3,
+        "fields": {
+            "name": "Done"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Priority",
+        "pk": 1,
+        "fields": {
+            "name": "Low"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Priority",
+        "pk": 2,
+        "fields": {
+            "name": "Average"
+        } 
+    },	
+    {	
+        "model": "myTaskManager.Priority",
+        "pk": 3,
+        "fields": {
+            "name": "High"
+        } 
+    }	
+]

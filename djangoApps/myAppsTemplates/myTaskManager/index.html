@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+<!-- List of tasks --> 
+
+{% block sidebar %}
+<div id="sidebar">
+<h4>Order by</h4>
+<a href="/tasks/orderby/priority">Priority</a>
+<br>
+<a href="/tasks/orderby/category">Category</a>
+<br>
+<a href="/tasks/orderby/status">Status</a>
+<br>
+<a href="/tasks/orderby/insert_date">Insert date</a>
+<br>
+<a href="/tasks/orderby/due_date">Due date</a>
+<br>
+</div>
+{% endblock sidebar %}
+
+{% block title %}Tasks list{% endblock %} 
+
+{% block content %}
+
+<table border=1>
+<!--  <tr style="background:#AFDCEC"> -->
+  <tr>
+    <td></td>
+    <td><b>Subect</b></td>
+    <td><b>Category</b></td>
+    <td><b>Priority</b></td>
+    <td><b>Status</b></td>
+    <td><b>Insert date</b></td>
+    <td><b>Due date</b></td>
+  </tr>    
+
+  <button type="button">
+  <a style="color:black;text-decoration:none;" href="/tasks/add">&nbsp New &nbsp</a>
+  </button>
+  <!--<a href="/tasks/add"> New </a>-->
+  
+  <form action="/tasks/mainform" method="POST">
+    
+  {% for task in tasks_list %}
+
+  <tr style="background:{{task.color}}">
+    <td style="text-align:center;"><input type="checkbox" name="selected" value="{{task.pk}}"></td>
+    <td> {{ task.subject }}  </td>
+    <td> {{ task.category }} </td>
+    <td> {{ task.priority }} </td>
+    <td> {{ task.status }} </td>
+    <td> {{ task.insert_date }} </td>
+    <td> {{ task.due_date }} </td>
+  </tr>
+  
+  {% endfor %}
+
+  <input type="submit" value="Delete" name="Delete"/>
+  <input type="submit" value="Update" name="Update"/>
+  <input type="submit" value="Details" name="Details"/>
+  </form>
+
+</table>
+  
+{% endblock content %}
+
+

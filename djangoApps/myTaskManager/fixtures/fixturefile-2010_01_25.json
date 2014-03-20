@@ -1,0 +1,265 @@
+[
+   {
+      "pk": 1, 
+      "model": "myTaskManager.person", 
+      "fields": {
+         "name": "Giuseppe", 
+         "email": "giuseppe.lo.re@cern.ch"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.person", 
+      "fields": {
+         "name": "Daniela", 
+         "email": "daniela_marletta@hotmail.com"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "myTaskManager.category", 
+      "fields": {
+         "name": "CASTOR Tape"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.category", 
+      "fields": {
+         "name": "TSM"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "myTaskManager.category", 
+      "fields": {
+         "name": "Personal"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "myTaskManager.status", 
+      "fields": {
+         "name": "New"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.status", 
+      "fields": {
+         "name": "In hand"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "myTaskManager.status", 
+      "fields": {
+         "name": "Done"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "myTaskManager.priority", 
+      "fields": {
+         "name": "Low"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.priority", 
+      "fields": {
+         "name": "Average"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "myTaskManager.priority", 
+      "fields": {
+         "name": "High"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "myTaskManager.log", 
+      "fields": {
+         "text": "already asked a new server to massimo\r\n", 
+         "time": "2011-01-25 09:37:11"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.log", 
+      "fields": {
+         "text": "to do during the transition to the new hardware and slc5", 
+         "time": "2011-01-25 09:38:29"
+      }
+   }, 
+   {
+      "pk": 1, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 1, 
+         "due_date": "2011-02-09", 
+         "insert_date": "2011-01-25", 
+         "priority": 1, 
+         "person": 1, 
+         "status": 2, 
+         "log": null, 
+         "subject": "new server for tapelog Low Giuseppe"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-02-25", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 1, 
+         "log": null, 
+         "subject": "rinnovo carta identita' Normal Giuseppe"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-04-14", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 2, 
+         "status": 2, 
+         "log": null, 
+         "subject": "caf Normal Daniela"
+      }
+   }, 
+   {
+      "pk": 4, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 1, 
+         "due_date": "2011-01-31", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 2, 
+         "log": 2, 
+         "subject": "fix toutput"
+      }
+   }, 
+   {
+      "pk": 5, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-03-31", 
+         "insert_date": "2011-01-25", 
+         "priority": 1, 
+         "person": 1, 
+         "status": 1, 
+         "log": null, 
+         "subject": "cambiare targa fusion"
+      }
+   }, 
+   {
+      "pk": 6, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 1, 
+         "due_date": "2011-01-25", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 3, 
+         "log": null, 
+         "subject": "aggiungere optione \"-f\" a repack-find-diskcopies"
+      }
+   }, 
+   {
+      "pk": 7, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-01-25", 
+         "insert_date": "2011-01-25", 
+         "priority": 3, 
+         "person": 1, 
+         "status": 3, 
+         "log": null, 
+         "subject": "dare cert assicurazione a scuola"
+      }
+   }, 
+   {
+      "pk": 8, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 2, 
+         "due_date": "2011-03-31", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 2, 
+         "log": null, 
+         "subject": "disk arrays replacement"
+      }
+   }, 
+   {
+      "pk": 9, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 1, 
+         "due_date": "2011-02-09", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 1, 
+         "log": null, 
+         "subject": "new tapelog alarm of \"Communication error\""
+      }
+   }, 
+   {
+      "pk": 10, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-02-09", 
+         "insert_date": "2011-01-25", 
+         "priority": 3, 
+         "person": 1, 
+         "status": 2, 
+         "log": null, 
+         "subject": "irpef"
+      }
+   }, 
+   {
+      "pk": 11, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 2, 
+         "due_date": "2011-01-31", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 2, 
+         "log": null, 
+         "subject": "check status of the 200 new tapes"
+      }
+   }, 
+   {
+      "pk": 12, 
+      "model": "myTaskManager.task", 
+      "fields": {
+         "category": 3, 
+         "due_date": "2011-01-31", 
+         "insert_date": "2011-01-25", 
+         "priority": 2, 
+         "person": 1, 
+         "status": 1, 
+         "log": null, 
+         "subject": "french card"
+      }
+   }
+]

@@ -1,0 +1,82 @@
+{% extends "base_nosidebar.html" %}
+
+<!-- Task details -->
+
+{% block title %}Task details{% endblock %} 
+
+{% block content %}
+
+
+{% for task in tasks_list %}
+
+<br><br>
+
+<table>
+    <tr style="background:#AFDCEC">
+	<td width="30%"><b>Subject</b></td>
+        <td width="10%"><b>Category</b></td>
+        <td width="10%"><b>Priority</b></td>
+        <td width="10%"><b>Status</b></td>
+        <td width="10%"><b>Insert date</b></td>
+        <td width="10%"><b>Due date</b></td>
+    </tr>    
+
+    <tr>
+      <td width="30%"> {{ task.subject }} </td>
+      <td width="10%"> {{ task.category }} </td>
+      <td width="10%"> {{ task.priority }} </td>
+      <td width="10%"> {{ task.status }} </td>
+      <td width="10%"> {{ task.insert_date }} </td>
+      <td width="10%"> {{ task.due_date }} </td>
+    </tr>
+</table>
+
+<!--
+<div>
+Insert additional info here:
+</div> 
+-->
+
+<div style="background:#ECF8E0">
+<table>
+    
+  {% if task.log_set.all %}
+  
+  <tr style="background:#AFDCEC">
+    <td width="10%"><b>Time</b></td>
+    <td width="50%"><b>Comment</b></td>
+  </tr>
+  
+  {% endif %}
+  
+  {% for l in task.log_set.all %}
+  
+  <tr>
+    <td>{{ l.time }}</td>
+    <td>{{ l.text }}</td>
+  </tr>  
+  
+  {% endfor %}
+  
+</table>
+
+</div>
+
+<!--<br>
+<a href="/tasks/{{task.id}}/add_log"> <b>Add comment</b> </a>
+<br>-->
+
+<form action="/tasks/{{ task.id }}/add_log" method="POST">
+<input type="textarea" name="some_text" /> 
+<input type="submit" value="Add" />
+</form>
+
+<br>
+<hr>
+
+{% endfor %}
+
+<br><br><br>
+
+
+{% endblock content %}

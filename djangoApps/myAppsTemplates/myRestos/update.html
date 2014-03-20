@@ -1,0 +1,15 @@
+{% extends "base_nosidebar.html" %}
+
+{% block title %}Restaurants update{% endblock %}
+
+{% block content %}
+
+<form action="/restaurants/del_upd" method="POST"> 
+<table>
+
+{{ formset.as_table }}
+
+</table>
+<input type="submit" value="Submit" name="Updated" />
+</form>
+{% endblock content %}

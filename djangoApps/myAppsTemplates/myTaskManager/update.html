@@ -1,0 +1,15 @@
+{% extends "base_nosidebar.html" %}
+
+{% block title %}Tasks update{% endblock %}
+
+{% block content %}
+
+<form action="/tasks/mainform" method="POST"> 
+<table>
+
+{{ formset.as_table }}
+
+</table>
+<input type="submit" value="Updated" name="Updated" />
+</form>
+{% endblock content %}

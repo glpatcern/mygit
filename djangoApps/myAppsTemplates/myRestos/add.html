@@ -1,0 +1,36 @@
+{% extends "base_nosidebar.html" %}
+{% block title %}Add restaurant{% endblock %} 
+{% block content %}
+<div>
+
+<br>
+<h4>Register a new restaurant:</h4> 
+<br>
+<hr>
+<br>
+<form action="/restaurants/add" method="POST">
+{{ form.non_field_errors }}
+<table align="left">
+  <tr>
+    <td width="15%"><label for="id_name">Name:</label></td>
+    <td>{{ form.name }}</td>
+  </tr>
+  <tr>
+    <td><label for="id_address">Address:</label></td>
+    <td>{{ form.address }}</td>
+  </tr>
+  <tr>
+    <td><label for="id_phonenumber">Phone number:</label></td>
+    <td>{{ form.phonenumber }}</td>
+  </tr>
+  <tr>
+    <td><label for="id_email">Email:</label></td>
+    <td>{{ form.email }}</td>
+  </tr>
+</table>
+
+<input type="submit" value="Submit" />
+</form>
+</div> 
+
+{% endblock content %}

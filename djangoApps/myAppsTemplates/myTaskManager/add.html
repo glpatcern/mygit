@@ -1,0 +1,28 @@
+{% extends "base_nosidebar.html" %}
+{% block title %}Add task{% endblock %} 
+{% block content %}
+<div>
+
+<br>
+<h4>Register a new task:</h4> 
+<br>
+<hr>
+<br>
+<form action="/tasks/add" method="POST">
+{{ form.non_field_errors }}
+<table align="left">
+
+<tr><td width=15%><b>Subject:</b></td><td>{{form.subject}}</td></tr>
+<tr><td width=15%><b>Due date:</b></td><td>{{form.due_date}}</td></tr>
+<tr><td width=15%><b>Category:</b></td><td>{{form.category}}</td></tr>
+<tr><td width=15%><b>Status:</b></td><td>{{form.status}}</td></tr>
+<tr><td width=15%><b>Priority:</b></td><td>{{form.priority}}</td></tr>
+<tr><td width=15%><b>Person:</b></td><td>{{form.person}}</td></tr>
+
+</table>
+
+<input type="submit" value="Submit" />
+</form>
+</div> 
+
+{% endblock content %}

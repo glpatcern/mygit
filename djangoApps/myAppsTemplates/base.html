@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+{% block style %}
+
+<style type="text/css"> 
+  html * { padding:0; margin:0; }
+  body * { padding:10px 20px; }
+  body * * { padding:0; }
+  body { font:small sans-serif; background:#ffffff; }
+  body>div { border-bottom:0px solid #ddd; }
+  h1 { font-weight:normal; margin-bottom:.4em; }
+  h1 span { font-size:60%; color:#666; font-weight:normal; }
+  table { border:none; border-collapse: collapse; width:100%; }
+  td, th { vertical-align:top; padding:2px 3px; }
+  th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+  p {padding-top:5px; }
+  button {margin-right:3px}
+  <!--#info { background:#f6f6f6; }
+  #info ol { margin: 0.5em 4em; }
+  #info ol li { font-family: monospace; }-->
+  #headline {  text-align:left;}
+  #sidebar {  text-align:left; padding-top:10px; padding-left:20px; height:600px}
+
+</style> 
+
+{% endblock style %}
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>
+      {% block title %}
+      My personal apps
+      {% endblock %}
+    </title>
+</head>
+
+<body>
+
+{% block headline %}
+<div id="headline">
+<br> 
+<h3>My Apps:   
+<a href="/tasks">Tasks,</a>   
+<a href="/accounts">Accounts,</a>   
+<a href="/restaurants">Restaurants</a></h3> 
+</div>
+{% endblock headline %}
+
+<table border=0>
+<tr>
+<td width="10%">
+{% block sidebar %}
+This is a sidebar
+{% endblock sidebar %}
+</td>
+<td width="90%">
+<div id="content">
+{% block content %}
+Content from the base temp...
+{% endblock %}
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

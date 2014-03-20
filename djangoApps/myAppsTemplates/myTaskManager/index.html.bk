@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- List of tasks --> 
+
+{% block title %}Tasks123{% endblock %} 
+
+<!-- <div id="content"> -->
+{% block content %}
+<table border="0" cellpadding="4" width="70%">
+
+    <tr>
+	<td>Subect</td>
+        <td>Category</td>
+        <td>Priority</td>
+        <td>Status</td>
+        <td>Due date</td>
+    </tr>    
+
+    {% for task in tasks_list %}
+
+        <tr>
+            <td {% if forloop.last %}class="last"{% endif %}> <div class="title">  {{ task.subject }} </div> </td>
+            <td {% if forloop.last %}class="last"{% endif %}> {{ task.category }} </td>
+            <td {% if forloop.last %}class="last"{% endif %}> {{ task.priority }} </td>
+            <td {% if forloop.last %}class="last"{% endif %}> {{ task.status }} </td>
+            <td {% if forloop.last %}class="last"{% endif %}> {{ task.due_date }} </td>
+            <td {% if forloop.last %}class="last"{% endif %}> <a class="button" href="{% url myTaskManager.views.detail task.pk %}"> Details</a> </td>
+        </tr>
+         
+    {% endfor %}
+
+{% endblock content %}
+<!-- </div> -->
+
+
