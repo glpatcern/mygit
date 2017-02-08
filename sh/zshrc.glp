@@ -3,14 +3,11 @@
 
 # Authentication
 alias lxp='ssh -X itglp@lxplus'
-alias lxa='ssh itglp@lxadm'
+alias aia='ssh lopresti@aiadm'
 alias cdev='ssh root@lxc2dev2'
-alias ral='ssh -A -X glp34@bastion0.rl.ac.uk -L21521:cdbc04.gridpp.rl.ac.uk:1521'
-alias ralgen='ssh -A castor@bastion.rl.ac.uk -L8083:cgendlf.ads.rl.ac.uk:80 -L2022:cdbd03.gridpp.rl.ac.uk:1521'
+alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
 alias asgc='ssh -2 root@c2stager.grid.sinica.edu.tw -L31521:w-rac09-vip.grid.sinica.edu.tw:15501'
-alias seblap='ssh -X itglp@seblap'
-alias desk='ssh -X itglp@pcitdss04'
-alias csc='ssh -X cscweb'
+alias desk='ssh -X lopresti@pcitdss04'
 alias gpi='kinit; grid-proxy-init'
 #alias gpi='kinit; voms-proxy-init -voms dteam:/dteam/cern/Role=lcgadmin'
 
@@ -30,13 +27,13 @@ alias pp='ps auxfww | egrep " PID|${*}" | grep -v grep | grep '
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias nsls='nsls -li --class'
-alias svs='svn status | grep -v \? | grep -v "^ M"'
 alias gst='git status'
 alias gup='git fetch; git checkout origin/master'
-alias gact='git status | grep modified | awk '\''{print $3}'\'' | xargs git '
+alias gact='git status | grep modified | awk '\''{print $2}'\'' | xargs git '
+alias gca='git commit --amend --no-edit'
+alias gpr='git pull --rebase'
 # rlwrap (see https://twiki.cern.ch/twiki/bin/view/PSSGroup/RlWrap) for sqlplus
-alias sqlp='rlwrap -f ~itglp/bin/rlwrap_dict sqlplus'
-alias cdbdir='cd /var/lib/cdb/hld/checkout'
+alias sqlp='rlwrap -f ~/bin/rlwrap_dict sqlplus'
 alias vg='valgrind --suppressions=/usr/local/src/CASTOR2/tools/castor.supp --leak-check=full'
 alias cyc='for f in *.c*; do echo $f `mcstrip $f | cyclo -c 2>/dev/null | grep "Total complexity"`; done | awk '\''{print $NF " " $1}'\'' | sort -n'
 alias rpmup='rpm -Uvh --replacefiles --replacepkgs'
@@ -79,7 +76,7 @@ export PATH=./:~/bin:$PATH
 limit coredumpsize unlimited
 
 # Sharing history across all boxes
-export HISTFILE=~itglp/.histoall
+export HISTFILE=~/.histoall
 export HISTFILESIZE=999999
 export SAVEHIST=999
 export HISTSIZE=9999
@@ -126,7 +123,7 @@ autoload -U colors && colors    # Enables colors
 #####################
 # completion system #
 #####################
-. ~itglp/.zshcomp
+. ~/.zshcomp
 
 ##########
 # prompt #
@@ -144,14 +141,13 @@ gridenv () {
 }
 
 # Castor specific
-export PATH=${PATH}:${ORACLE_HOME}/bin:${CASTOR_ROOT}/tools:${CASTOR_ROOT}/hsmtools:${GLOBUS_LOCATION}/bin:/opt/xrootd/bin:/opt/lcg/bin:/opt/glite/bin
+export PATH=${PATH}:${CASTOR_ROOT}/tools:${CASTOR_ROOT}/hsmtools:${GLOBUS_LOCATION}/bin:/opt/xrootd/bin:/opt/lcg/bin:/opt/glite/bin
 if [ `arch` = 'x86_64' ]; then
   LIB=lib64
 else
   LIB=lib
 fi
 export LD_LIBRARY_PATH=/usr/$LIB:${GLOBUS_LOCATION}/lib:${GSOAP_LOCATION}/$LIB:/opt/glite/$LIB:.:${GLITE_LOCATION}/../edg/$LIB:/opt/lcg/$LIB:${CASTOR_ROOT}/shlib:${SRM_ROOT}/srm:/usr/local/$LIB
-export DESTDIR="/opt/castor"
 
 export CASTOR_WWW=/afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR
 export SAVANNAH_WWW=/afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR/DIST/CERN/savannah/CASTOR.pkg
@@ -159,8 +155,7 @@ export CDEVHOME=/castor/cern.ch/dev/i/itglp
 export CHOME=/castor/cern.ch/user/i/itglp
 export CASTOR_HOME=$CHOME
 
-alias mmf='\make -f Makefile.ini'
-alias make='make -s -j 4'
+alias make='make -j 4'
 alias alltp='cat /etc/castor/TPCONFIG | awk "{print \$1}" | xargs -i tpconfig {} up'
 export STAGER_TRACE=3
 #export CSEC_TRACE=3
@@ -185,10 +180,10 @@ c2envd() {
 }
 
 orapwd() {
-  ssh root@c2${1}srv301 cat /etc/castor/ORASTAGERCONFIG
+  ssh root@c2${1}-1 cat /etc/castor/ORASTAGERCONFIG
 }
-sqlpc2() {
-  sqlp `ssh root@castor$1 cat /etc/castor/ORASTAGERCONFIG | awk '{print $3}' | xargs | sed 's/ /\//' | sed 's/ /@/'` $2
+c2sqlp() {
+  sqlp `ssh root@c2${1}-1 cat /etc/castor/ORASTAGERCONFIG | awk '{print $3}' | xargs | sed 's/ /\//' | sed 's/ /@/'` $2
 }
 oraspwd() {
   ssh root@srm-$1 cat /etc/castor/ORASRMCONFIG
