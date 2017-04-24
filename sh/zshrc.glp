@@ -11,7 +11,7 @@ alias gpi='kinit; grid-proxy-init'
 
 # Utilities
 alias fresh='. ~/.zshrc'
-alias nmapscan='sudo nmap -sS -v -P0 -O'
+alias nmapscan='sudo nmap -sS -v -Pn -O'
 alias a2ps='a2ps -A fill -C --toc -s duplex'
 alias cernrd='rdesktop -a 16 -u lopresti -d CERN -g 1400x1024 cernts.cern.ch &'
 
