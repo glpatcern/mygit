@@ -8,6 +8,7 @@ alias cdev='ssh root@lxc2dev2'
 alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
 alias gpi='kinit; grid-proxy-init'
 #alias gpi='kinit; voms-proxy-init -voms dteam:/dteam/cern/Role=lcgadmin'
+alias desk='ssh -X glpdesk'
 
 # Utilities
 alias fresh='. ~/.zshrc'
