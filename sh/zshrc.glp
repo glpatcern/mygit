@@ -77,7 +77,7 @@ limit coredumpsize unlimited
 # Sharing history across all boxes
 export HISTFILE=~/.histoall
 export HISTFILESIZE=999999
-export SAVEHIST=999
+export SAVEHIST=9999
 export HISTSIZE=9999
 
 ##############################
