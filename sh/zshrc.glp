@@ -130,9 +130,6 @@ autoload -U colors && colors    # Enables colors
 export PROMPT=$'%{\e[32m%}%n%{\e[37m%}@%{\e[33m%}%m%{\e[37m%}:%{\e[36m%}%3/%{\e[0m%}> '
 export RPROMPT=$'${vcs_info_msg_0_} %{\e[1;34m%}%D{%b %d}, %T%{\e[0m%}'
 
-# Python Environment
-export PYTHONPATH=/usr/lib/python2.6/site-packages
-
 # To enable Grid Environment
 gridenv () {
   source ~itglp/bin/grid-env.sh

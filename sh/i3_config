@@ -160,10 +160,13 @@ bar {
 # name workspaces
 bindsym $mod+n exec i3-input -F 'rename workspace to %s' -P 'workspace name: '
 
+# xrandr multi-monitor configuration
+exec --no-startup-id ~/.screenlayout/dualscreen.sh
+
 # startup
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dropbox start
-exec --no-startup-id synergys
+exec --no-startup-id synergy
 exec --no-startup-id cernbox
 exec --no-startup-id CrashPlanDesktop
 exec --no-startup-id terminator
