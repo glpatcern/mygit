@@ -45,5 +45,5 @@ ln -s /share/CACHEDEV1_DATA/.qpkg /root/QTS
 ln -s ~glp/QSync/qnap /root/qnap
 ln -s ~glp/QSync/dev/DOMOTICA /root/DOMOTICA
 ln -s /share/Container/homeass-config /root
-ln -s /share/COntainer/homeass-config/home-assistant.log /var/log
+ln -s /share/Container/homeass-config/home-assistant.log /var/log
 
