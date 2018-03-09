@@ -3,7 +3,7 @@
 
 # Authentication
 alias lxp='ssh -X itglp@lxplus'
-alias aia='ssh lopresti@aiadm'
+alias aia='ssh -D 8080 lopresti@aiadm'
 alias cdev='ssh root@lxc2dev2'
 alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
 alias gpi='kinit; grid-proxy-init'
