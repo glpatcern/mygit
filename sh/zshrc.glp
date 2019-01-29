@@ -32,7 +32,7 @@ alias gact='git status | grep modified | awk '\''{print $2}'\'' | xargs git '
 alias gca='git commit --amend --no-edit'
 alias gpr='git pull --rebase'
 # rlwrap (see https://twiki.cern.ch/twiki/bin/view/PSSGroup/RlWrap) for sqlplus
-alias sqlp='rlwrap -f ~/bin/rlwrap_dict sqlplus'
+alias sqlp='rlwrap -f ~/bin/rlwrap_dict sqlplus64'
 alias vg='valgrind --suppressions=/usr/local/src/CASTOR2/tools/castor.supp --leak-check=full'
 alias cyc='for f in *.c*; do echo $f `mcstrip $f | cyclo -c 2>/dev/null | grep "Total complexity"`; done | awk '\''{print $NF " " $1}'\'' | sort -n'
 alias rpmup='rpm -Uvh --replacefiles --replacepkgs'
