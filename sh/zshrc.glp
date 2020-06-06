@@ -56,7 +56,6 @@ export XAUTHORITY=~/.Xauthority
 #####################
 setopt AUTO_CD
 setopt AUTO_PUSHD
-setopt CDABLE_VARS
 setopt PUSHD_IGNORE_DUPS
 setopt BANG_HIST
 setopt EXTENDED_HISTORY
