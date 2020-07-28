@@ -177,5 +177,5 @@ bindsym $mod+Shift+l exec "~lopresti/bin/screenlock.sh"
 exec xautolock -time 15 -locker '~lopresti/bin/screenlock.sh' &
 
 # shortcuts for applications
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec firefox
 
