@@ -1,0 +1,27 @@
+[user]
+  name = Giuseppe Lo Presti
+  email = giuseppe.lopresti@cern.ch
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[rerere]
+  enabled = 1
+[giggle]
+  main-window-maximized = false
+  main-window-geometry = 1704x974+208+25
+  file-view-vpane-position = 408
+  main-window-view = FileView
+  history-view-vpane-position = 391
+  file-view-hpane-position = 302
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  stat = show --stat
+  rmtag = !git tag -d $1 && git push origin :refs/tags/$1 && :
+[push]
+  default = simple
+[http]
+  emptyAuth = true
+[core]
+  fileMode = false
