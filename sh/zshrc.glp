@@ -2,11 +2,11 @@
 #######################################
 
 # Authentication
-alias lxp='ssh -X itglp@lxplus.cern.ch'
-alias aia='ssh -D 8080 -L 5901:glpdesk.dyndns.cern.ch:5901 lopresti@aiadm.cern.ch'
-alias cdev='ssh root@lxc2dev2'
-alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
-alias gpi='kinit; grid-proxy-init'
+alias lxp='ssh -X lopresti@lxplus.cern.ch'
+alias aia='ssh -X lopresti@aiadm.cern.ch'
+alias lxt='ssh -N -D 8080 -L 5901:glpdesk.dyndns.cern.ch:5901 lopresti@lxtunnel.cern.ch &'
+#alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
+#alias gpi='kinit; grid-proxy-init'
 #alias gpi='kinit; voms-proxy-init -voms dteam:/dteam/cern/Role=lcgadmin'
 alias desk='ssh -X glpdesk'
 
@@ -25,12 +25,13 @@ alias -g errno='/usr/include/bits/errno.h /usr/include/sys/errno.h /usr/include/
 alias pp='ps auxfww | egrep " PID|${*}" | grep -v grep | grep '
 alias ls='ls --color=auto'
 alias ll='ls -lh'
-alias nsls='nsls -li --class'
+
 alias gst='git status'
 alias gact='git status | grep modified | awk '\''{print $2}'\'' | xargs git '
 alias gca='git commit --amend --no-edit'
 alias gcaf='git commit --amend --no-edit; git push --force'
 alias gpr='git pull --rebase'
+
 # rlwrap (see https://twiki.cern.ch/twiki/bin/view/PSSGroup/RlWrap) for sqlplus
 alias sqlp='rlwrap -f ~/bin/rlwrap_dict sqlplus64'
 alias vg='valgrind --suppressions=/usr/local/src/CASTOR2/tools/castor.supp --leak-check=full'
@@ -208,4 +209,3 @@ setpre () {
         fi
 }
 #compdef '_parameters' setpre
-
