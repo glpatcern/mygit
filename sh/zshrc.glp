@@ -2,9 +2,10 @@
 #######################################
 
 # Authentication
+alias k='kinit lopresti'
 alias lxp='ssh -X lopresti@lxplus.cern.ch'
 alias aia='ssh -X lopresti@aiadm.cern.ch'
-alias lxt='ssh -N -D 8080 -L 5901:glpdesk.dyndns.cern.ch:5901 lopresti@lxtunnel.cern.ch &'
+alias lxt='ssh -N -D 8080 -L 5901:glpdesk.dyndns.cern.ch:5901 lopresti@lxtunnel.cern.ch'  # -L 16286:lxlicenwolfram01:16286
 #alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
 #alias gpi='kinit; grid-proxy-init'
 #alias gpi='kinit; voms-proxy-init -voms dteam:/dteam/cern/Role=lcgadmin'
