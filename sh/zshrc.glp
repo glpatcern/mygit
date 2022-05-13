@@ -16,7 +16,9 @@ alias fresh='. ~/.zshrc'
 alias nmapscan='sudo nmap -sS -v -Pn -O'
 alias a2ps='a2ps -A fill -C --toc -s duplex'
 alias cernrd='rdesktop -a 16 -u lopresti -d CERN -g 1400x1024 cernts.cern.ch &'
-
+lbresolve() {
+  nslookup $1 | grep Address | grep -v '#' | awk '{print $2}' | xargs -i nslookup {} | grep name
+}
 alias gettime='perl -e "'"print localtime ( shift ) . chr(0xa) . chr(0xd) "'"'
 alias getip='python .getip.py' \!:1
 alias gethost='host `getip \!:1`'
@@ -30,7 +32,6 @@ alias ll='ls -lh'
 alias gst='git status'
 alias gact='git status | grep modified | awk '\''{print $2}'\'' | xargs git '
 alias gca='git commit --amend --no-edit'
-alias gcaf='git commit --amend --no-edit; git push --force'
 alias gpr='git pull --rebase'
 
 # rlwrap (see https://twiki.cern.ch/twiki/bin/view/PSSGroup/RlWrap) for sqlplus
