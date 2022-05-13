@@ -134,57 +134,17 @@ gridenv () {
   export MANPATH="${MANPATH}:${GLITE_LOCATION}/share/man"
 }
 
-# Castor specific
-export PATH=${PATH}:${CASTOR_ROOT}/tools:${CASTOR_ROOT}/hsmtools:${GLOBUS_LOCATION}/bin:/opt/xrootd/bin:/opt/lcg/bin:/opt/glite/bin
+# CERNBox/Castor specific
+alias make='make -j 4'
+alias cbox='reva -host grpc.cernbox.cern.ch:9142 -insecure'
+
+export PATH=${PATH}:${GLOBUS_LOCATION}/bin:/opt/xrootd/bin:/opt/lcg/bin:/opt/glite/bin
 if [ `arch` = 'x86_64' ]; then
   LIB=lib64
 else
   LIB=lib
 fi
 export LD_LIBRARY_PATH=/usr/$LIB:${GLOBUS_LOCATION}/lib:${GSOAP_LOCATION}/$LIB:/opt/glite/$LIB:.:${GLITE_LOCATION}/../edg/$LIB:/opt/lcg/$LIB:${CASTOR_ROOT}/shlib:${SRM_ROOT}/srm:/usr/local/$LIB
-
-export CASTOR_WWW=/afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR
-export SAVANNAH_WWW=/afs/cern.ch/project/cndoc/wwwds/HSM/CASTOR/DIST/CERN/savannah/CASTOR.pkg
-export CDEVHOME=/castor/cern.ch/dev/i/itglp
-export CHOME=/castor/cern.ch/user/i/itglp
-export CASTOR_HOME=$CHOME
-
-alias make='make -j 4'
-alias alltp='cat /etc/castor/TPCONFIG | awk "{print \$1}" | xargs -i tpconfig {} up'
-export STAGER_TRACE=3
-#export CSEC_TRACE=3
-
-#for tests
-alias trycastor='rfcp /etc/group $CASTOR_HOME/notape/${STAGE_HOST}_`uuidgen`'
-alias tryxr='file=$CASTOR_HOME/notape/${STAGE_HOST}_xrd_`uuidgen`; xrdcp /etc/group root://$STAGE_HOST/$file; echo $file'
-alias lcgls='lcg-ls --verbose --nobdii -D srmv2 --vo dteam -l'
-
-c2env () {
-  export STAGE_HOST=$1
-  export STAGE_SVCCLASS=$2
-  export CASTOR_HOME=$CHOME
-  unset CNS_HOST
-}
-
-c2envd() {
-  export STAGE_HOST=lxc2dev2
-  export CNS_HOST=lxc2dev2
-  export STAGE_SVCCLASS=$1
-  export CASTOR_HOME=$CDEVHOME
-}
-
-orapwd() {
-  ssh root@c2${1}-1 cat /etc/castor/ORASTAGERCONFIG
-}
-c2sqlp() {
-  sqlp `ssh root@c2${1}-1 cat /etc/castor/ORASTAGERCONFIG | awk '{print $3}' | xargs | sed 's/ /\//' | sed 's/ /@/'` $2
-}
-oraspwd() {
-  ssh root@c2${1}-1 cat /etc/castor/ORASRMCONFIG
-}
-c2ssqlp() {
-  sqlp `ssh root@c2${1}-1 cat /etc/castor/ORASRMCONFIG | awk '{print $3}' | xargs | sed 's/ /\//' | sed 's/ /@/'` $2
-}
 
 ###############################
 # ap/prepending env variables #
@@ -210,3 +170,4 @@ setpre () {
         fi
 }
 #compdef '_parameters' setpre
+
