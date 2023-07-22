@@ -1,9 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage{bibunits}
 \usepackage{multicol}
-\usepackage{graphicx}
 \usepackage{tabularx}
-
+\usepackage{graphicx}
 % This is a helpful package that puts math inside length specifications
 \usepackage{calc}
 
@@ -83,7 +82,8 @@
 \newcolumntype{s}{>{\hsize=.25\hsize}X}
 
 \begin{tabularx}{\textwidth}{X X s}
-	 %{@{\extracolsep{\fill}}ll}
+   %{@{\extracolsep{\fill}}ll}
+
 \textbf{\large Giuseppe Lo Presti} \newline
 ch. du Grand-Puits 49A \newline
 CH-1217 Meyrin (Gen\`eve) \newline
@@ -96,6 +96,7 @@ http://cern.ch/lopresti
 &
 \raisebox{-.5\height}{\includegraphics[width=3cm,natwidth=653,natheight=724]{profile.jpg}}
 \\
+
 \end{tabularx}
 
 
@@ -112,8 +113,10 @@ data management systems for the High Energy Physics community.
 
 \section{Professional Experience Summary}
 
-\textbf{2008 - present: CERN Staff member, IT Department}\\
-Senior developer, project leader, Service Manager for the CASTOR and CERNBox projects\\[.3\baselineskip]
+\textbf{2016 - present: CERN Staff member, IT Department}\\
+Senior developer, deputy team leader and Service Manager for the CERNBox project\\[.3\baselineskip]
+\textbf{2008 - 2019: CERN Staff member, IT Department}\\
+Senior developer, project leader, Service Manager for the CASTOR project\\[.3\baselineskip]
 \textbf{2010 - 2015: CERN Staff member, IT Department}\\
 Technical Manager of the CERN School of Computing\\[.3\baselineskip]
 \textbf{Mar 2005 - Feb 2008: CERN Fellow, IT Department, and Research associate,\\ INFN-CNAF, Bologna, Italy}\\
@@ -130,13 +133,24 @@ Software engineer and project manager for several web-oriented projects
 
 \subsection{Dec 2016 - present}{CERNBox, CERN/IT}
 
-Service Manager, software and service developer for CERNBox, the cloud storage for all CERN users.
+Service Manager, deputy team leader, software and service developer for CERNBox, the CERN Cloud Storage.
 
 \begin{CompactItemize}
 \item Contributed the integration of online Office platforms in CERNBox by designing, implementing and deploying the required connector services
 \item Led service operations of the Windows Samba gateways for CERNBox
 \item Participated in the test of new desktop clients, dealing with the ownCloud core software team
-\item Invited to the ownCloud Conference 2017 in N{\"u}rnberg, Germany, regular contributor of the CS3 Workshops organized by the group
+\item Regular contributor to the CS3 (\href{https://www.cs3community.org/}{Cloud Storage for Sync \& Share}) Workshops organized by the group
+\item Invited to the ownCloud and Nextcloud conferences
+\end{CompactItemize}
+
+\subsection{Jan 2020 - Jun 2023}{CS3MESH4EOSC, CERN/IT}
+
+Contributor to the EU-funded project CS3MESH4EOSC.
+
+\begin{CompactItemize}
+\item Open Cloud Mesh standard
+\item Collaborative apps, CodiMD
+\item Software foundation
 \end{CompactItemize}
 
 \subsection{2015 - 2019}{CASTOR Service Manager, CERN/IT}
@@ -276,10 +290,10 @@ Contributed to a number of research projects at the University of Palermo during
 \section{Technical Competencies}
 
 \begin{description}
-\item[Languages and technologies]: C++, Python, Go (db interaction, multithreading, web apps),
-  SQL (all major RDBMSs), Hadoop, shell scripting, docker, UML.
-\item[Operating systems]: Linux (SL/CentOS and Debian), MS Windows, MacOS X.
-\item[Tools]: git, gdb/valgrind, puppet, CI toolchains (Gitlab, GitHub), \LaTeX, Office suites.
+\item[Languages and technologies]: Python, Go, C++ (db interaction, multithreading, web apps),
+  SQL (Oracle, SQLServer, MySQL, PostgreSQL), Hadoop, InfluxDB, shell scripting, docker, UML.
+\item[Operating systems]: Linux (SL/CentOS and Debian), MS Windows (Server Editions).
+\item[Tools]: git, gdb/valgrind, Puppet, Grafana, CI toolchains (Gitlab, GitHub), \LaTeX, Office suites.
 \end{description}
 
 
@@ -292,11 +306,12 @@ English, French: professional proficiency
 
 \section{Other Interests and Activities}
 
-Official CERN Guide since 2004 and senior guide (\textquoteleft\emph{conferencier}\textquoteright) since 2011,
-for both public and VIP visits in Italian, English, and French.
+Official CERN Guide since 2004 and senior guide (\textquoteleft\emph{conferencier}\textquoteright) since 2011, for both public and VIP visits in Italian, English, and French.
+
+Lecturer at the CERN Academic Training, with a series about \href{https://indico.cern.ch/event/1172806}{The Physics of Music}, co-authored with Prof. Isabella Masina, University of Ferrara, Italy.
 
 Skiing instructor as of 2012 with a \emph{Moniteur Federal} license from the French Ski Federation,
-contributing to the CERN Ski Club Boureau with the role of secretary in the period 2013 - 2016 and president in the period 2016 - 2019.
+contributed to the CERN Ski Club Boureau (Secretary in 2013 - 2016, President in 2016 - 2019).
 
 Contact person representing CERN with ASCERI (Association of the Sport Communities of the European Research Institutes, \href{www.asceri.eu}{www.asceri.eu}) since 2014.
 
@@ -308,7 +323,7 @@ Piano, photography, astronomy, hiking, bricolage/IoT.
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{4cm}p{11cm}}
 Alberto Pace \newline \small alberto.pace@cern.ch & Group Leader, IT/Storage group\\
 Latchezar Betev \newline \small latchezar.betev@cern.ch & ALICE Offline Computing Coordinator\\
-Philippe Charpentier \newline \small philippe.charpentier@cern.ch & Former LHCb Data Handling Coordinator\\
+Philippe Charpentier \newline \small philippe.charpentier@cern.ch & Former LHCb Data Management Coordinator\\
 Fran\c{c}ois Fl\"uckiger \newline \small francois.fluckiger@cern.ch & Former Director, CERN School of Computing\\
 %Daniele Bonacorsi \newline \small daniele.bonacorsi@bo.infn.it & Deputy Computing Coordinator, CMS Experiment\\
 %Tony Cass \newline \small tony.cass@cern.ch & Group Leader, IT/Database Services\\
