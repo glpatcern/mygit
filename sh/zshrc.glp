@@ -15,7 +15,7 @@ alias desk='nc -z localhost 22222 && ssh -4 -p 22222 localhost || ssh -4 -X glpd
 alias fresh='. ~/.zshrc'
 alias nmapscan='sudo nmap -sS -v -Pn -O'
 alias a2ps='a2ps -A fill -C --toc -s duplex'
-alias cernrd='rdesktop -a 16 -u lopresti -d CERN -g 1400x1024 cernts.cern.ch &'
+alias cernrd='remmina -a 16 -u lopresti -d CERN -g 1400x1024 cernts.cern.ch &'
 lbresolve() {
   nslookup $1 | grep Address | grep -v '#' | awk '{print $2}' | xargs -i nslookup {} | grep name
 }
