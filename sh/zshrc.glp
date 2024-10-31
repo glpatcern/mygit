@@ -5,11 +5,12 @@
 alias k='kinit lopresti'
 alias lxp='ssh lopresti@lxplus.cern.ch'
 alias aia='ssh lopresti@aiadm.cern.ch'
-alias lxt='ssh -N -D 8080 -L 5901:glpdesk.dyndns.cern.ch:5901 -L 22222:glpdesk.dyndns.cern.ch:22 -L 2222:cbox-ocisdev-glp.cern.ch:22 lopresti@lxtunnel.cern.ch'  # -L 16286:lxlicenwolfram01.cern.ch:16286
+alias lxt='ssh -N -D 8080 -L 22222:glpdesk.dyndns.cern.ch:22 -L 2222:cbox-ocisdev-glp.cern.ch:22 lopresti@lxtunnel.cern.ch'  # -L 16286:lxlicenwolfram01.cern.ch:16286
 #alias ral='ssh -A -X giuseppelo@lcgui04.gridpp.rl.ac.uk'
 #alias gpi='kinit; grid-proxy-init'
 #alias gpi='kinit; voms-proxy-init -voms dteam:/dteam/cern/Role=lcgadmin'
 alias desk='nc -z localhost 22222 && ssh -4 -p 22222 localhost || ssh -4 -X glpdesk'
+alias tm='nc -z localhost 2222 && ssh -4 -p 2222 localhost || ssh -4 cbox-ocisdev-glp'
 
 # Utilities
 alias fresh='. ~/.zshrc'
